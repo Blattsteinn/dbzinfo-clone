@@ -10,6 +10,10 @@
 
 # Generated seed data - 2026-03-31T16:25:14.115649
 
+# Generated seed data - 2026-04-01T00:49:25.362153
+
+# Generated seed data - 2026-04-01T00:52:28.128094
+
 Card.create(id: 1030021, name: "Super Saiyan 3 Gotenks", title: "Audacious Finish", rarity: 5, hp_init: 4799, hp_max: 15838, atk_init: 4654, atk_max: 15360, def_init: 3183, def_max: 10506, cost: 77, element: 11, leader_skill: "\"Majin Buu Saga\" Category 
 Ki +3 and HP, ATK & DEF +200%", passive_skill_name: "Time-Bound Dead Heat", passive_skill_itemized_desc: "*Basic effect(s)*
 - Ki +7 and ATK & DEF 200%{passiveImg:up_g}
@@ -40,6 +44,11 @@ Ki*
 *When receiving a Ki Blast Super Attack*
 - Damage reduction rate 44%{passiveImg:up_g} temporarily and counters
 with ferocious power", open_at: "2024-12-12 05:00:00", is_f2p: false, is_dokkan_fes: false, is_carnival_only: true)
+Special.create(id: 6045, name: "Super Kamehameha", description: "Greatly raises ATK & DEF for 1 turn and 
+causes colossal damage to enemy", style: "Normal", eball_num_start: 12, special_bonus_1: "Super Attack +30% – Super Attack power will be increased even more!", special_bonus_1_lv: 20, is_eza: false)
+Special.create(id: 6046, name: "Die Die Missile Barrage", description: "Greatly raises ATK & DEF for 1 turn, 
+causes mega-colossal damage to enemy 
+and greatly lowers DEF", style: "Hyper", eball_num_start: 18, special_category_name: "Ki Blast", special_bonus_1: "Super Attack +30% – Super Attack power will be increased even more!", special_bonus_1_lv: 20, is_eza: false)
 CardCategory.create(card_id: 1030021, category_id: 1)
 CardCategory.create(card_id: 1030021, category_id: 5)
 CardCategory.create(card_id: 1030021, category_id: 9)
@@ -66,3 +75,5 @@ CardLink.create(card_id: 1030021, link_id: 47)
 CardLink.create(card_id: 1030021, link_id: 4)
 CardLink.create(card_id: 1030021, link_id: 109)
 CardLink.create(card_id: 1030021, link_id: 125)
+CardSpecial.create(card_id: 1030021, special_id: 6045)
+CardSpecial.create(card_id: 1030021, special_id: 6046)

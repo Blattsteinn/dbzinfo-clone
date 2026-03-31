@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 2026_03_30_172138) do
+ActiveRecord::Schema[8.1].define(version: 2026_03_31_213711) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -28,6 +28,16 @@ ActiveRecord::Schema[8.1].define(version: 2026_03_30_172138) do
     t.index ["card_id", "link_id"], name: "index_card_links_on_card_id_and_link_id", unique: true
     t.index ["card_id"], name: "index_card_links_on_card_id"
     t.index ["link_id"], name: "index_card_links_on_link_id"
+  end
+
+  create_table "card_specials", id: false, force: :cascade do |t|
+    t.bigint "card_id"
+    t.datetime "created_at", null: false
+    t.bigint "special_id"
+    t.datetime "updated_at", null: false
+    t.index ["card_id", "special_id"], name: "index_card_specials_on_card_id_and_special_id", unique: true
+    t.index ["card_id"], name: "index_card_specials_on_card_id"
+    t.index ["special_id"], name: "index_card_specials_on_special_id"
   end
 
   create_table "cards", force: :cascade do |t|
@@ -71,8 +81,24 @@ ActiveRecord::Schema[8.1].define(version: 2026_03_30_172138) do
     t.string "name", null: false
   end
 
+  create_table "specials", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.text "description", null: false
+    t.integer "eball_num_start", null: false
+    t.boolean "is_eza", default: false
+    t.string "name", null: false
+    
+    t.text "special_bonus_1"
+    t.integer "special_bonus_1_lv"
+    t.string "special_category_name", default: "Other"
+    t.string "style", null: false
+    t.datetime "updated_at", null: false
+  end
+
   add_foreign_key "card_categories", "cards"
   add_foreign_key "card_categories", "categories"
   add_foreign_key "card_links", "cards"
   add_foreign_key "card_links", "links"
+  add_foreign_key "card_specials", "cards"
+  add_foreign_key "card_specials", "specials"
 end

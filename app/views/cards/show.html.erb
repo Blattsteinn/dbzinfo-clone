@@ -28,10 +28,29 @@
          </div>
     </div>
 
-    <div id="super-attacks">
-        Super attack
-    </div>
+    <% @card.specials.each do |special| %>
+        <div class="super-attacks">
+            <div>
+                <%= special.style %> 
+                (<%=special.eball_num_start %> Ki) | 
+                <%= special.name %>
+                <hr>
+            </div>
 
+            <div>
+                <div>
+                    <%= special.description %>
+                </div>
+            <hr>
+                <div>
+                    At level <%= special.special_bonus_1_lv %>:
+                    <%= special.special_bonus_1 %>
+                </div>
+
+            </div>
+            
+        </div>
+    <% end %>
 
     <div id="links">
         <div> Links </div>
