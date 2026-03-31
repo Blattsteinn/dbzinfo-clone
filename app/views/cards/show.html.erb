@@ -1,0 +1,58 @@
+
+<h1> <%= @card.name %> </h1>
+
+<div class="container">
+
+    <div id="character-art">
+        <div> <%= image_tag @card.character_image_url %> </div>
+    </div>
+
+    <div id="character-preview", >
+        <div> <%= image_tag @card.thumb_image_url %> </div>
+            <div>
+                <div> <h2> <%= @card.title %> </h2> </div>
+                <div> <h3> <%= @card.name  %> </h3> </div>
+            </div>
+    </div>
+
+    <div id="leader-skill">
+        <div> Leader skill </div>
+
+        <div> <%= @card.leader_skill %> </div>
+
+    </div>
+
+    <div id="passive-skill">
+        <div> Passive skill | <%= @card.passive_skill_name %> </div>
+        <div> <%= @card.passive_skill_itemized_desc %>
+         </div>
+    </div>
+
+    <div id="super-attacks">
+        Super attack
+    </div>
+
+
+    <div id="links">
+        <div> Links </div>
+            <div> 
+                <% @card.links.each do |link| %> 
+                    <%= link.name %>
+                <% end %>
+
+            </div>
+    </div>
+
+
+    <div id="categories">
+        <div> Categories </div>
+            <div> 
+                <% @card.categories.each do |category| %> 
+                    <%= category.name %>
+                <% end %>
+
+            </div>
+    </div>
+
+
+</div>

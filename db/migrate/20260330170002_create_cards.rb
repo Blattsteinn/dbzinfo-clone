@@ -8,15 +8,15 @@ class CreateCards < ActiveRecord::Migration[8.1]
       # Character.new(id: 100054, name: "Gotenks", ....)
  
       # Stats
-    t.integer  :rarity,                  null: false
-    t.integer  :hp_init,                 null: false
-    t.integer  :hp_max,                  null: false
-    t.integer  :atk_init,                null: false
-    t.integer  :atk_max,                 null: false
-    t.integer  :def_init,                null: false
-    t.integer  :def_max,                 null: false
-    t.integer  :cost,                    null: false
- 
+      t.integer  :rarity,                  null: false
+      t.integer  :hp_init,                 null: false
+      t.integer  :hp_max,                  null: false
+      t.integer  :atk_init,                null: false
+      t.integer  :atk_max,                 null: false
+      t.integer  :def_init,                null: false
+      t.integer  :def_max,                 null: false
+      t.integer  :cost,                    null: false
+  
       # Type
       #10,11,12,13,14 -super
       #20,21,22,23,24 - extremes

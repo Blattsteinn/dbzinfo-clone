@@ -1,0 +1,83 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+/* Quick visual test to confirm the asset pipeline is serving this file. */
+h1 {
+    color: teal;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  padding: 10px;
+}
+
+#character-art {
+    grid-column: 1;
+    grid-row: 1 / 12;
+    align-self: start;
+}
+
+#character-preview {
+    display: flex;
+    grid-column: 2;
+    /* grid-row: 1; */
+}
+
+#leader-skill {
+    grid-column: 2;
+    /* grid-row: 2; */
+}
+
+#passive-skill {
+    grid-column: 2;
+    /* grid-row: 3; */
+}
+
+#super-attacks{
+    grid-column: 2;
+    /* grid-row: 6; */
+}
+
+#categories {
+    grid-column: 2;
+    /* grid-row: 7; */
+}
+
+#links {
+    grid-column: 2;
+    /* grid-row: 8; */
+}
+
+
+
+
+
+#character-art,
+#character-preview,
+#leader-skill,
+#passive-skill,
+#categories,
+#links,
+#super-attacks {
+    border: 2px solid black;
+    margin: 10px
+}
+
+li {
+    padding: 0px;
+    margin: 0px; 
+}

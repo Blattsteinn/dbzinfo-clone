@@ -1,0 +1,2 @@
+class CardSpecial < ApplicationRecord
+end
