@@ -3,75 +3,150 @@
 
 <div class="container">
 
-    <div id="character-art">
-        <div> <%= image_tag @card.character_image_url %> </div>
+
+    <div id="left-container">
+        <div id="character-art">
+            <div> <%= image_tag @card.character_image_url %> </div>
+        </div>
+                
+        <div id="transformation-container">
+            <% if @card.transformation_chain.any? %>
+                <% @card.transformation_chain.each do |card| %>
+                <div class="card-transformations">
+                    <%= image_tag card.thumb_image_url %>
+                    <%= link_to "View card", card %>
+                </div>
+                <% end %>
+            <% end  %>
+        </div>
     </div>
 
-    <div id="character-preview", >
-        <div> <%= image_tag @card.thumb_image_url %> </div>
+    <div class="right-container">
+        <div id="character-preview", >
+            <div> <%= image_tag @card.thumb_image_url %> </div>
             <div>
                 <div> <h2> <%= @card.title %> </h2> </div>
                 <div> <h3> <%= @card.name  %> </h3> </div>
             </div>
-    </div>
-
-    <div id="leader-skill">
-        <div> Leader skill </div>
-
-        <div> <%= @card.leader_skill %> </div>
-
-    </div>
-
-    <div id="passive-skill">
-        <div> Passive skill | <%= @card.passive_skill_name %> </div>
-        <div> <%= @card.passive_skill_itemized_desc %>
-         </div>
-    </div>
-
-    <% @card.specials.each do |special| %>
-        <div class="super-attacks">
-            <div>
-                <%= special.style %> 
-                (<%=special.eball_num_start %> Ki) | 
-                <%= special.name %>
-                <hr>
-            </div>
-
-            <div>
-                <div>
-                    <%= special.description %>
-                </div>
-            <hr>
-                <div>
-                    At level <%= special.special_bonus_1_lv %>:
-                    <%= special.special_bonus_1 %>
-                </div>
-
-            </div>
-            
         </div>
-    <% end %>
 
-    <div id="links">
-        <div> Links </div>
-            <div> 
-                <% @card.links.each do |link| %> 
-                    <%= link.name %>
-                <% end %>
+        <div id="leader-skill">
+            <div> Leader skill </div>
+
+            <div> <%= @card.leader_skill %> </div>
+
+        </div>
+
+        <div id="passive-skill">
+            <div> Passive skill | <%= @card.passive_skill_name %> </div>
+            <div> <%= @card.passive_skill_itemized_desc %>
+            </div>
+        </div>
+
+        <% unless @card.active_id.nil?%>
+            <div id="active-skill">
+                <div>
+                    Active Skill | <%= @card.active.active_skill_name %>
+                </div>
+                    <hr>
+
+                <div>
+                    Condition: <%= @card.active.active_skill_condition %>
+                </div>
+                    <hr>
+
+                <div>
+                    <%= @card.active.active_skill_effect %>
+                </div>
+        
+            </div>
+        <% end %>
+
+        <% unless @card.stand_by_id.nil?%>
+            <div id="stand-by">
+                <div>
+                    Stand By Skill | <%= @card.stand_by.name %>
+                </div>
+                    <hr>
+
+                <div>
+                    Condition: <%= @card.stand_by.condition_description %>
+                </div>
+                    <hr>
+
+                <div>
+                        <%= @card.stand_by.effect_description %>
+                </div>
 
             </div>
-    </div>
+        <% end %>
 
+        <% unless @card.finish_skills.length == 0 %>
+            <% @card.finish_skills.each do |skill| %>
+                <div id="stand-by">
+                    <div>
+                        Finish  Skill | <%= skill.name %>
+                    </div>
+                        <hr>
 
-    <div id="categories">
-        <div> Categories </div>
-            <div> 
-                <% @card.categories.each do |category| %> 
-                    <%= category.name %>
-                <% end %>
+                    <div>
+                        Condition: <%= skill.condition_description %>
+                    </div>
+                        <hr>
 
+                    <div>
+                        <%= skill.effect_description %>
+                    </div>
+
+                </div>
+            <% end %>
+        <% end %>
+
+        <% @card.specials.each do |special| %>
+            <div class="super-attacks">
+                <div>
+                    <%= special.style %> 
+                    (<%=special.eball_num_start %> Ki) | 
+                    <%= special.special_category_name %>, <%= special.name %>
+                    <!-- special_category_name can be replaced with a symbol -->
+                    <hr>
+                </div>
+
+                <div>
+                    <div>
+                        <%= special.description %>
+                    </div>
+                <hr>
+                    <div>
+                        At level <%= special.special_bonus_1_lv %>:
+                        <%= special.special_bonus_1 %>
+                    </div>
+
+                </div>
+                
             </div>
-    </div>
+        <% end %>
 
+        <div id="links">
+            <div> Links </div>
+                <div> 
+                    <% @card.links.each do |link| %> 
+                        <%= link.name %>
+                    <% end %>
+
+                </div>
+        </div>
+
+        <div id="categories">
+            <div> Categories </div>
+                <div> 
+                    <% @card.categories.each do |category| %> 
+                        <%= category.name %>
+                    <% end %>
+
+                </div>
+        </div>
+
+    </div>
 
 </div>

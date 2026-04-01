@@ -19,48 +19,26 @@ h1 {
     color: teal;
 }
 
+
 .container {
   display: grid;
   grid-template-columns: 1fr 2fr;
   padding: 10px;
 }
 
-#character-art {
+#left-container {
     grid-column: 1;
-    grid-row: 1 / 12;
-    align-self: start;
 }
+
+#right-container {
+    grid-column: 2;
+}
+
 
 #character-preview {
     display: flex;
-    grid-column: 2;
-    /* grid-row: 1; */
 }
 
-#leader-skill {
-    grid-column: 2;
-    /* grid-row: 2; */
-}
-
-#passive-skill {
-    grid-column: 2;
-    /* grid-row: 3; */
-}
-
-.super-attacks{
-    grid-column: 2;
-    /* grid-row: 6; */
-}
-
-#categories {
-    grid-column: 2;
-    /* grid-row: 7; */
-}
-
-#links {
-    grid-column: 2;
-    /* grid-row: 8; */
-}
 
 
 
@@ -72,7 +50,10 @@ h1 {
 #passive-skill,
 #categories,
 #links,
-.super-attacks {
+.super-attacks,
+#active-skill,
+#stand-by,
+.card-transformations {
     border: 2px solid black;
     margin: 10px
 }
