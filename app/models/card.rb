@@ -8,7 +8,7 @@ class Card < ApplicationRecord
   has_many :specials, dependent: :delete_all
 
   has_many :finish_skills, dependent: :delete_all
-
+  has_many :extreme_awakenings
 
   belongs_to  :active, optional: true
   belongs_to  :stand_by, optional: true

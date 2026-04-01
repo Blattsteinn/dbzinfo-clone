@@ -1,122 +1,81 @@
-# Generated seed data - 2026-04-01T19:57:16.899594
+# Generated seed data - 2026-04-01T23:29:09.825973
 
-Active.create(id: 316, active_skill_name: "Holy Light Grenade", active_skill_effect: "Massively raises ATK temporarily and 
-causes ultimate damage to enemy; 
-all attacks become critical hits and 
-\"Super Bosses\" Category allies' 
-ATK & DEF +15%, plus an additional 
-DEF +10% for characters who also belong to 
-the \"Future Saga\" Category, for 4 turns", active_skill_condition: "Can be activated starting from the 
-4th turn from the start of battle 
-(once only, be it before or after 
-Reversible Exchange)")
-Active.create(id: 317, active_skill_name: "Birth of Fusion Zamasu!", active_skill_effect: "Massively raises ATK temporarily and 
-causes ultimate damage to enemy; 
-Ki +4 and ATK +40% in battle", active_skill_condition: "Can be activated upon entering 
-attacking turn (once only, be it 
-before or after Reversible Exchange)")
+Active.create(id: 178, active_skill_name: "Spirit Bomb", active_skill_effect: "Massively raises ATK temporarily, 
+causes ultimate damage to enemy and, 
+within the turn activated, 
+all attacks become critical hits", active_skill_condition: "Can be activated when HP is 59% or less, 
+or when there is another \"Earth-Bred Fighters\" 
+Category ally attacking in the same turn starting 
+from the 5th turn from the start of battle (once only)")
 
-Card.create(id: 1031431, name: "Goku Black (Super Saiyan Rosé) + Zamasu", title: "Terrifying Zero Mortals Plan", rarity: 5, hp_init: 6473, hp_max: 21363, atk_init: 4525, atk_max: 14935, def_init: 2507, def_max: 8275, cost: 77, element: 23, leader_skill: "\"Super Bosses\" Category 
-Ki +4 and HP, ATK & DEF +220%", passive_skill_name: "Mortals Must Be Banished!", passive_skill_itemized_desc: "*Basic effect(s)*
-- ATK & DEF 200%{passiveImg:up_g}
-- Receives an additional Ki +2 per Ki Sphere obtained
-- ATK & DEF 80%{passiveImg:up_g} and attacks are effective against all Types
-for allies whose names include \"Goku Black\"
-*Per Extreme Class ally or \"Future Saga\" Category ally
-on the team (depending on which has more members)*
-- ATK & DEF 50%{passiveImg:up_g} (up to 150%)
-- Chance of performing a critical hit & damage reduction rate
-20%{passiveImg:up_g} (up to 60%)
-*When all allies attacking in the same turn are Extreme Class
-characters, or when there is another \"Future Saga\" Category
-ally attacking in the same turn*
-- Guards all attacks
-*When activating the Active Skill or when attacking with
-18 or more Ki*
-- ATK 200%{passiveImg:up_g}
-- Launches an additional attack that has a great chance of
-becoming a Super Attack
+Card.create(id: 1026161, name: "Goku", title: "A Soul Pumped Up in Battle", rarity: 5, hp_init: 3962, hp_max: 13075, atk_init: 4525, atk_max: 14935, def_init: 3763, def_max: 12419, cost: 77, element: 10, leader_skill: "\"Turtle School\" Category 
+Ki +3 and HP, ATK & DEF +200%", passive_skill_name: "A Radiant Soul", passive_skill_itemized_desc: "*Activates the Entrance Animation upon the character's entry*
+- {passiveImg:once}Ki +4, ATK & DEF 59%{passiveImg:up_g} and guards all attacks
+for 6 turns
+*Basic effect(s)*
+- Ki +4
+- ATK & DEF 159%{passiveImg:up_g}
 *When receiving an attack*
-- DEF 180%{passiveImg:up_g}
-*Starting from the 4th turn from the start of battle*
-- Meets up with Zamasu and can perform Reversible Exchange", open_at: "2025-07-07 01:00:00", is_f2p: false, is_dokkan_fes: false, is_carnival_only: true, active_id: 316, is_transformed: false)
-Special.create(card_id: 1031431, id: 7702, name: "Violent Fierce God Slicer", description: "Greatly raises ATK and raises DEF for 1 turn, 
-causes colossal damage to enemy 
-and lowers ATK", style: "Normal", eball_num_start: 12, special_bonus_1: "Super Attack +30% – Super Attack power will be increased even more!", special_bonus_1_lv: 20, is_eza: false)
-Special.create(card_id: 1031431, id: 7703, name: "Black Kamehameha", description: "Greatly raises ATK and 
-causes mega-colossal damage to enemy; 
-raises allies' ATK by 60% for 1 turn (self excluded)", style: "Hyper", eball_num_start: 18, special_category_name: "Ki Blast", special_bonus_1: "Super Attack +30% – Super Attack power will be increased even more!", special_bonus_1_lv: 20, is_eza: false)
-CardCategory.create(card_id: 1031431, category_id: 8)
-CardCategory.create(card_id: 1031431, category_id: 10)
-CardCategory.create(card_id: 1031431, category_id: 19)
-CardCategory.create(card_id: 1031431, category_id: 26)
-CardCategory.create(card_id: 1031431, category_id: 39)
-CardCategory.create(card_id: 1031431, category_id: 46)
-CardCategory.create(card_id: 1031431, category_id: 50)
-CardCategory.create(card_id: 1031431, category_id: 64)
-CardCategory.create(card_id: 1031431, category_id: 68)
-CardCategory.create(card_id: 1031431, category_id: 80)
-CardCategory.create(card_id: 1031431, category_id: 82)
-CardCategory.create(card_id: 1031431, category_id: 83)
-CardCategory.create(card_id: 1031431, category_id: 84)
-CardCategory.create(card_id: 1031431, category_id: 85)
-CardCategory.create(card_id: 1031431, category_id: 90)
-CardCategory.create(card_id: 1031431, category_id: 92)
-CardCategory.create(card_id: 1031431, category_id: 96)
-CardLink.create(card_id: 1031431, link_id: 66)
-CardLink.create(card_id: 1031431, link_id: 120)
-CardLink.create(card_id: 1031431, link_id: 119)
-CardLink.create(card_id: 1031431, link_id: 47)
-CardLink.create(card_id: 1031431, link_id: 50)
-CardLink.create(card_id: 1031431, link_id: 109)
-CardLink.create(card_id: 1031431, link_id: 125)
-
-Card.create(id: 4031441, name: "Zamasu + Goku Black (Super Saiyan Rosé)", title: "Terrifying Zero Mortals Plan", rarity: 5, hp_init: 6473, hp_max: 21363, atk_init: 4525, atk_max: 14935, def_init: 2507, def_max: 8275, cost: 77, element: 23, leader_skill: "\"Super Bosses\" Category 
-Ki +4 and HP, ATK & DEF +220%", passive_skill_name: "Mortals Are Unnecessary!", passive_skill_itemized_desc: "*Basic effect(s)*
-- Can perform Reversible Exchange with Goku Black
-(Super Saiyan Rosé)
-- Ki +7 and ATK & DEF 200%{passiveImg:up_g}
-- High chance of performing a critical hit
-- Guards all attacks
-*When attacking*
-- ATK & DEF 200%{passiveImg:up_g}
-- \"Future Saga\" Category Extreme Class allies'
-damage reduction rate 10%{passiveImg:up_g}
-*When activating the Active Skill or when attacking
-with 20 or more Ki*
-- ATK & DEF 200%{passiveImg:up_g}
+- Survives K.O. attacks (up to once within a turn)
+*When receiving a Ki Blast Super Attack*
+- High chance of nullifying it and countering with tremendous power
+*For every attack received*
+- {passiveImg:forever}Ki +1 (up to +5)
+- {passiveImg:forever}Chance of performing a critical hit 9%{passiveImg:up_g} (up to 59%)
+*After receiving 5 or more attacks in battle*
+- {passiveImg:forever}DEF 59%{passiveImg:up_g}
+*After receiving 9 or more attacks in battle*
+- {passiveImg:forever}ATK 120%{passiveImg:up_g}
+*If HP is 40% or less at the end of turn*
+- {passiveImg:once}Recovers 59% HP", open_at: "2023-07-25 05:00:00", is_f2p: false, is_dokkan_fes: false, is_carnival_only: true, active_id: 178, is_transformed: false)
+Special.create(card_id: 1026161, id: 4486, name: "Turtle School Performance", description: "Raises ATK & DEF for 1 turn and 
+causes colossal damage to enemy", style: "Normal", eball_num_start: 12, special_category_name: "Unarmed", special_bonus_1: "Super Attack +30% – Super Attack power will be increased even more!", special_bonus_1_lv: 20, is_eza: false)
+Special.create(card_id: 1026161, id: 4410, name: "Meteor Smash", description: "Raises DEF, raises ATK for 1 turn and 
+causes mega-colossal damage to enemy", style: "Hyper", eball_num_start: 18, special_category_name: "Unarmed", special_bonus_1: "Super Attack +30% – Super Attack power will be increased even more!", special_bonus_1_lv: 20, is_eza: false)
+Special.create(card_id: 1026161, id: 8284, name: "Turtle School Performance (Extreme)", description: "Greatly raises ATK & DEF for 1 turn, 
+causes colossal damage to enemy and 
+recovers 10% HP", style: "Normal", eball_num_start: 12, special_category_name: "Unarmed", special_bonus_1: "Super Attack +30% – Super Attack power will be increased even more!", special_bonus_1_lv: 20, is_eza: true)
+Special.create(card_id: 1026161, id: 8285, name: "Meteor Smash (Extreme)", description: "Greatly raises DEF, 
+greatly raises ATK for 4 turns and 
+causes mega-colossal damage to enemy", style: "Hyper", eball_num_start: 18, special_category_name: "Unarmed", special_bonus_1: "Super Attack +30% – Super Attack power will be increased even more!", special_bonus_1_lv: 20, is_eza: true)
+CardCategory.create(card_id: 1026161, category_id: 17)
+CardCategory.create(card_id: 1026161, category_id: 20)
+CardCategory.create(card_id: 1026161, category_id: 30)
+CardCategory.create(card_id: 1026161, category_id: 39)
+CardCategory.create(card_id: 1026161, category_id: 46)
+CardCategory.create(card_id: 1026161, category_id: 65)
+CardCategory.create(card_id: 1026161, category_id: 79)
+CardCategory.create(card_id: 1026161, category_id: 87)
+CardCategory.create(card_id: 1026161, category_id: 89)
+CardCategory.create(card_id: 1026161, category_id: 90)
+CardLink.create(card_id: 1026161, link_id: 22)
+CardLink.create(card_id: 1026161, link_id: 23)
+CardLink.create(card_id: 1026161, link_id: 30)
+CardLink.create(card_id: 1026161, link_id: 42)
+CardLink.create(card_id: 1026161, link_id: 45)
+CardLink.create(card_id: 1026161, link_id: 109)
+CardLink.create(card_id: 1026161, link_id: 125)
+ExtremeAwakening.create(card_id: 1026161, awakening_type: 0, leader_skill_description: "\"Turtle School\" Category 
+Ki +4 and HP, ATK & DEF +200%", passive_skill_itemized_desc: "*Activates the Entrance Animation upon the character's entry*
+- {passiveImg:once}Ki +4, ATK & DEF 159%{passiveImg:up_g}, chance of performing
+a critical hit 20%{passiveImg:up_g} and guards all attacks for 7 turns
+- {passiveImg:once}Damage reduction rate 20%{passiveImg:up_g} for 1 turn
+*Basic effect(s)*
+- Ki +4 and ATK & DEF 259%{passiveImg:up_g}
 - Launches an additional Super Attack
-- ATK & DEF 300%{passiveImg:up_g}, performs a critical hit and
-recovers 6% of damage dealt as HP when HP is 60% or less", open_at: "2025-07-07 01:00:00", is_f2p: false, is_dokkan_fes: false, is_carnival_only: false, active_id: 317, is_transformed: true)
-Special.create(card_id: 4031441, id: 7704, name: "Fierce God Slicer", description: "Greatly raises ATK & DEF for 1 turn, 
-causes colossal damage to enemy 
-and lowers DEF", style: "Normal", eball_num_start: 12, special_bonus_1: "Super Attack +30% – Super Attack power will be increased even more!", special_bonus_1_lv: 20, is_eza: false)
-Special.create(card_id: 4031441, id: 7705, name: "God Splitter", description: "Massively raises ATK & DEF for 1 turn, 
-causes mega-colossal damage to enemy 
-and recovers 20% HP", style: "Hyper", eball_num_start: 18, special_category_name: "Ki Blast", special_bonus_1: "Super Attack +30% – Super Attack power will be increased even more!", special_bonus_1_lv: 20, is_eza: false)
-CardCategory.create(card_id: 4031441, category_id: 8)
-CardCategory.create(card_id: 4031441, category_id: 10)
-CardCategory.create(card_id: 4031441, category_id: 19)
-CardCategory.create(card_id: 4031441, category_id: 26)
-CardCategory.create(card_id: 4031441, category_id: 39)
-CardCategory.create(card_id: 4031441, category_id: 46)
-CardCategory.create(card_id: 4031441, category_id: 50)
-CardCategory.create(card_id: 4031441, category_id: 64)
-CardCategory.create(card_id: 4031441, category_id: 68)
-CardCategory.create(card_id: 4031441, category_id: 80)
-CardCategory.create(card_id: 4031441, category_id: 82)
-CardCategory.create(card_id: 4031441, category_id: 83)
-CardCategory.create(card_id: 4031441, category_id: 84)
-CardCategory.create(card_id: 4031441, category_id: 85)
-CardCategory.create(card_id: 4031441, category_id: 90)
-CardCategory.create(card_id: 4031441, category_id: 92)
-CardCategory.create(card_id: 4031441, category_id: 96)
-CardLink.create(card_id: 4031441, link_id: 66)
-CardLink.create(card_id: 4031441, link_id: 120)
-CardLink.create(card_id: 4031441, link_id: 119)
-CardLink.create(card_id: 4031441, link_id: 80)
-CardLink.create(card_id: 4031441, link_id: 50)
-CardLink.create(card_id: 4031441, link_id: 109)
-CardLink.create(card_id: 4031441, link_id: 125)
-CardTransformation.create(start_card_id: nil, next_card_id: 1031431)
-CardTransformation.create(start_card_id: 1031431, next_card_id: 4031441)
+*When attacking*
+- ATK 100%{passiveImg:up_g}
+*When receiving an attack*
+- DEF 259%{passiveImg:up_g} when HP is 59% or more
+- Chance of evading enemy's attack 80%{passiveImg:up_g} when HP is 59% or less
+- Survives K.O. attacks (up to once within a turn)
+*When receiving a Ki Blast Super Attack*
+- Great chance of nullifying it and countering with tremendous power
+*For every attack received or evaded*
+- {passiveImg:forever}Ki +2 (up to +6)
+- {passiveImg:forever}Chance of performing a critical hit 20%{passiveImg:up_g} (up to 59%)
+- {passiveImg:forever}ATK 100%{passiveImg:up_g} (up to 300%)
+- {passiveImg:forever}DEF 100%{passiveImg:up_g} (up to 200%)
+*If HP is 40% or less at the end of turn*
+- Recovers 59% HP
+- {passiveImg:once}Fully recovers HP", transformation_description: nil)

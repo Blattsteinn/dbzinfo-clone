@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 2026_04_01_153805) do
+ActiveRecord::Schema[8.1].define(version: 2026_04_01_194208) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -86,6 +86,18 @@ ActiveRecord::Schema[8.1].define(version: 2026_04_01_153805) do
   create_table "categories", force: :cascade do |t|
     t.string "name", null: false
     t.integer "priority", default: 0
+  end
+
+  create_table "extreme_awakenings", force: :cascade do |t|
+    t.integer "awakening_type", null: false
+    t.bigint "card_id", null: false
+    t.datetime "created_at", null: false
+    t.text "leader_skill_description"
+    t.text "passive_skill_itemized_desc"
+    t.text "transformation_description"
+    t.datetime "updated_at", null: false
+    t.index ["card_id", "awakening_type"], name: "index_extreme_awakenings_on_card_id_and_awakening_type", unique: true
+    t.index ["card_id"], name: "index_extreme_awakenings_on_card_id"
   end
 
   create_table "finish_skills", force: :cascade do |t|
