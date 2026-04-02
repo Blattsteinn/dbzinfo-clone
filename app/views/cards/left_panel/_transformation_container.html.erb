@@ -1,0 +1,11 @@
+
+<div id="transformation-container">
+    <% if @card.transformation_chain.any? %>
+        <% @card.transformation_chain.each do |card| %>
+        <div class="card-transformations">
+            <%= image_tag card.thumb_image_url %>
+            <%= link_to "View card", card %>
+        </div>
+        <% end %>
+    <% end  %>
+</div>

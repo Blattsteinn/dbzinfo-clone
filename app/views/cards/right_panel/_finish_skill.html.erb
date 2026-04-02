@@ -1,0 +1,21 @@
+
+<% unless @card.finish_skills.length == 0 %>
+    <% @card.finish_skills.each do |skill| %>
+        <div id="stand-by">
+            <div>
+                Finish  Skill | <%= skill.name %>
+            </div>
+                <hr>
+
+            <div>
+                Condition: <%= skill.condition_description %>
+            </div>
+                <hr>
+
+            <div>
+                <%= skill.effect_description %>
+            </div>
+
+        </div>
+    <% end %>
+<% end %>

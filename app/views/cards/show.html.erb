@@ -1,137 +1,43 @@
 
 <h1> <%= @card.name %> </h1>
 
-<div class="container">
+<div class="container" data-controller="eza-change"
+    data-eza-change-awakenings-value="<%= @card.extreme_awakenings.to_json %>"
+    data-eza-change-base-value="<%= @card.to_json %>" >
 
 
     <div id="left-container">
-        <div id="character-art">
-            <div> <%= image_tag @card.character_image_url %> </div>
-        </div>
-        <%= button_to "Base" %>
-        <%= button_to "EZA" %> <br>
+        <%= render 'cards/left_panel/character_art', card: @card %>
 
-        <%= button_to "SEZA" %>
+        <button data-action="click->eza-change#change_to_base"> Base</button>
 
-        <div id="transformation-container">
-            <% if @card.transformation_chain.any? %>
-                <% @card.transformation_chain.each do |card| %>
-                <div class="card-transformations">
-                    <%= image_tag card.thumb_image_url %>
-                    <%= link_to "View card", card %>
-                </div>
-                <% end %>
-            <% end  %>
-        </div>
+        <button data-action="click->eza-change#change_to_eza" 
+            data-awakening-type="0"> EZA</button>
+
+        <button data-action="click->eza-change#change_to_eza" 
+            data-awakening-type="1">no work SEZA</button>
+
+        <%= render 'cards/left_panel/transformation_container', card: @card %>
+
     </div>
+    
 
     <div class="right-container">
-        <div id="character-preview", >
-            <div> <%= image_tag @card.thumb_image_url %> </div>
-            <div>
-                <div> <h2> <%= @card.title %> </h2> </div>
-                <div> <h3> <%= @card.name  %> </h3> </div>
-            </div>
-        </div>
+        <%= render "cards/right_panel/character_preview" %>
 
-        <div id="leader-skill">
-            <div> Leader skill </div>
+        <%= render "cards/right_panel/leader_skill", card: @card %>
 
-            <div> <%= @card.leader_skill %> </div>
+        <%= render "cards/right_panel/passive_skill", card: @card %>
 
-        </div>
+        <--! Additional information that a character may not have -->
 
-        <div id="passive-skill">
-            <div> Passive skill | <%= @card.passive_skill_name %> </div>
-            <div> <%= @card.passive_skill_itemized_desc %>
-            </div>
-        </div>
+        <%= render "cards/right_panel/active_skill", card: @card %>
+        <%= render "cards/right_panel/stand_by", card: @card %>
+        <%= render "cards/right_panel/finish_skill", card: @card %>
 
-        <% unless @card.active_id.nil?%>
-            <div id="active-skill">
-                <div>
-                    Active Skill | <%= @card.active.active_skill_name %>
-                </div>
-                    <hr>
+        <--! End -->
 
-                <div>
-                    Condition: <%= @card.active.active_skill_condition %>
-                </div>
-                    <hr>
-
-                <div>
-                    <%= @card.active.active_skill_effect %>
-                </div>
-        
-            </div>
-        <% end %>
-
-        <% unless @card.stand_by_id.nil?%>
-            <div id="stand-by">
-                <div>
-                    Stand By Skill | <%= @card.stand_by.name %>
-                </div>
-                    <hr>
-
-                <div>
-                    Condition: <%= @card.stand_by.condition_description %>
-                </div>
-                    <hr>
-
-                <div>
-                        <%= @card.stand_by.effect_description %>
-                </div>
-
-            </div>
-        <% end %>
-
-        <% unless @card.finish_skills.length == 0 %>
-            <% @card.finish_skills.each do |skill| %>
-                <div id="stand-by">
-                    <div>
-                        Finish  Skill | <%= skill.name %>
-                    </div>
-                        <hr>
-
-                    <div>
-                        Condition: <%= skill.condition_description %>
-                    </div>
-                        <hr>
-
-                    <div>
-                        <%= skill.effect_description %>
-                    </div>
-
-                </div>
-            <% end %>
-        <% end %>
-
-        <% @card.specials.each do |special| %>
-            <% unless special.name.include? "(Extreme)" %>
-                <div class="super-attacks">
-                    <div>
-                        <%= special.style %> 
-                        (<%=special.eball_num_start %> Ki) | 
-                        <%= special.special_category_name %>, <%= special.name %>
-                        <!-- special_category_name can be replaced with a symbol -->
-                        <hr>
-                    </div>
-
-                    <div>
-                        <div>
-                            <%= special.description %>
-                        </div>
-                    <hr>
-                        <div>
-                            At level <%= special.special_bonus_1_lv %>:
-                            <%= special.special_bonus_1 %>
-                        </div>
-
-                    </div>
-                    
-                </div>
-            <% end %>
-        <% end %>
+        <%= render "cards/right_panel/specials", card: @card %>
 
         <div id="links">
             <div> Links </div>

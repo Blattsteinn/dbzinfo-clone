@@ -1,0 +1,27 @@
+
+<% @card.specials.each do |special| %>
+    <% unless special.name.include? "(Extreme)" %>
+        <div class="super-attacks">
+            <div>
+                <%= special.style %> 
+                (<%=special.eball_num_start %> Ki) | 
+                <%= special.special_category_name %>, <%= special.name %>
+                <!-- special_category_name can be replaced with a symbol -->
+                <hr>
+            </div>
+
+            <div>
+                <div>
+                    <%= special.description %>
+                </div>
+            <hr>
+                <div>
+                    At level <%= special.special_bonus_1_lv %>:
+                    <%= special.special_bonus_1 %>
+                </div>
+
+            </div>
+            
+        </div>
+    <% end %>
+<% end %>

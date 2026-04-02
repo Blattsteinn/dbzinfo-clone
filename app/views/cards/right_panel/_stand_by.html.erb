@@ -1,0 +1,19 @@
+
+<% unless @card.stand_by_id.nil?%>
+    <div id="stand-by">
+        <div>
+            Stand By Skill | <%= @card.stand_by.name %>
+        </div>
+            <hr>
+
+        <div>
+            Condition: <%= @card.stand_by.condition_description %>
+        </div>
+            <hr>
+
+        <div>
+                <%= @card.stand_by.effect_description %>
+        </div>
+
+    </div>
+<% end %>
