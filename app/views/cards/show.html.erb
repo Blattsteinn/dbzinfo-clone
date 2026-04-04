@@ -9,15 +9,25 @@
     <div id="left-container">
         <%= render 'cards/left_panel/character_art', card: @card %>
 
-        <button data-action="click->eza-change#change_to_base"> Base</button>
+        <% if @card.extreme_awakenings.length > 0 %>
+        <div id="optimal-awakening-routes">
+            <button class ="optimal-change-button" data-action="click->eza-change#change_to_base"> 
+                Base</button>
 
-        <button data-action="click->eza-change#change_to_eza" 
-            data-awakening-type="0"> EZA</button>
+            <button class ="optimal-change-button" data-action="click->eza-change#change_to_eza" 
+                data-awakening-type="0"> EZA</button>
+                
+                <% if @card.extreme_awakenings.length == 2 %>
+                <button class ="optimal-change-button" data-action="click->eza-change#change_to_seza" 
+                            data-awakening-type="1"> SEZA</button>
+                <% end %>
+        </div>
+        <% end %>
+            
 
-        <button data-action="click->eza-change#change_to_eza" 
-            data-awakening-type="1">no work SEZA</button>
 
         <%= render 'cards/left_panel/transformation_container', card: @card %>
+
 
     </div>
     
@@ -29,15 +39,31 @@
 
         <%= render "cards/right_panel/passive_skill", card: @card %>
 
-        <--! Additional information that a character may not have -->
+        <!-- Additional information that a character may not have -->
 
         <%= render "cards/right_panel/active_skill", card: @card %>
         <%= render "cards/right_panel/stand_by", card: @card %>
         <%= render "cards/right_panel/finish_skill", card: @card %>
 
-        <--! End -->
+        <!-- End -->
+        <div data-eza-change-target="superAttack"> 
+            <%= render "cards/right_panel/specials", card: @card %>
+        </div>
 
-        <%= render "cards/right_panel/specials", card: @card %>
+        <template data-eza-change-target="superAttackBase">
+            <%= render "cards/right_panel/specials", card: @card %>
+        </template>
+
+        <template data-eza-change-target="superAttackExtreme">
+            <%= render "cards/right_panel/specials_extreme", card: @card %>
+        </template>
+
+        <template data-eza-change-target="superAttackSuperExtreme">
+            <%= render "cards/right_panel/specials_super_extreme", card: @card %>
+        </template>
+
+        
+        
 
         <div id="links">
             <div> Links </div>

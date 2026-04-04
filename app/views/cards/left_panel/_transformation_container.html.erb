@@ -3,6 +3,13 @@
     <% if @card.transformation_chain.any? %>
         <% @card.transformation_chain.each do |card| %>
         <div class="card-transformations">
+        
+            <%  unless card.transformation_to&.description.nil? %>
+                Condition: <p data-eza-change-target="transformationCondition"> 
+                                <%=  card.transformation_to&.description %> 
+                            <p>
+            <% end %>
+
             <%= image_tag card.thumb_image_url %>
             <%= link_to "View card", card %>
         </div>

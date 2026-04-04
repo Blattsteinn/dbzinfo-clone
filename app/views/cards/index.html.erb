@@ -3,9 +3,10 @@
 
 <ul>
     <% @cards.each do |card| %>
+        <% if card.id.to_s.start_with? "1" %>
         <li>
            <%= link_to card.name, card %>
         </li> 
-
+        <% end %>
     <% end %>
 </ul>

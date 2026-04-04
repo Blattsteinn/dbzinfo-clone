@@ -35,15 +35,12 @@ h1 {
 }
 
 
-#character-preview {
-    display: flex;
-}
 
 
 
 
 
-
+#optimal-awakening-routes,
 #character-art,
 #character-preview,
 #leader-skill,
@@ -61,4 +58,58 @@ h1 {
 li {
     padding: 0px;
     margin: 0px; 
+}
+
+#optimal-awakening-routes{
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.optimal-change-button{
+    height: 70px;
+    width: 30%;
+}
+
+/* General text styling */
+.separate-section-header{
+    font-style: italic;
+    background-color: black;
+    color: wheat;
+}
+
+.separate-section-text{
+
+}
+
+/* _character_preview.html.erb */
+#character-preview {
+    display: flex;
+}
+
+#character-preview .char-info{
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* _leader_skill.html.erb */
+#leader-skill {
+    padding: 10px;
+}
+
+/* _passive_skill.html.erb */
+#passive-skill {
+    padding: 10px;
+}
+
+/* _specials.html.erb */
+.super-attacks{
+    padding: 10px;
+}
+
+/* Bottom part */
+#links, #categories {
+    padding: 10px;
 }

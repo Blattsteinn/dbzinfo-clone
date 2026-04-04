@@ -1,14 +1,18 @@
 
 
 <div id="leader-skill">
-    <div> 
-        <p data-eza-change-target="leaderSkillHeader"> Leader skill  </p>  
+    <div>   <!-- This should be class="separate-section-header" -->
+        <p data-eza-change-target="leaderSkillHeader" 
+            class="separate-section-header">   <!-- This should be class="separate-section-header-text" -->
+            Leader skill  
+        </p>
     </div>
 
-    <div> 
-        <p data-eza-change-target="leaderSkill">
+    <div>  <!-- This should be class="separate-section" -->
+        <p data-eza-change-target="leaderSkill"
+            class="separate-section-text">
             <%= @card.leader_skill %> 
-            </p> 
+        </p> 
     </div>
 
 </div>

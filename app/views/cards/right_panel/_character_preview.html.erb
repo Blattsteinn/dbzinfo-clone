@@ -1,8 +1,12 @@
 
 <div id="character-preview">
-    <div> <%= image_tag @card.thumb_image_url %> </div>
-    <div>
-        <div> <h2> <%= @card.title %> </h2> </div>
-        <div> <h3> <%= @card.name  %> </h3> </div>
+    <div> 
+        <%= image_tag @card.thumb_image_url %> 
+    </div>
+
+    <div class="char-info">
+        <h1> <%= @card.title %> </h1>
+        <h2> <%= @card.name  %> </h2> 
+    
     </div>
 </div>
