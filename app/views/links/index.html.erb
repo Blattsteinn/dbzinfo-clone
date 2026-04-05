@@ -1,0 +1,7 @@
+<h2> All links </h2>
+
+<% @links.each do |link| %>
+    <div>
+        <%= link_to link.name, link %>
+    </div>
+<% end %>

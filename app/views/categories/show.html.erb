@@ -1,0 +1,23 @@
+
+<h3> Viewing <%= @category.name %> category </h3>
+
+<h3> Leaders: NONE LMAO </h3> <hr>
+
+
+
+<h3> Cards </h3> <hr>
+
+    <div id="card-container">
+        <% @category.cards.each do |card| %>
+            <!-- We don't want to show transformations here -->
+            <% unless card.id.to_s.starts_with?("1") %>
+                <% next %>
+            <% end %>
+
+            <div class="char-display-box">
+                <%= image_tag card.thumb_image_url %>
+                <%= link_to "View card", card %>
+            </div>
+        <% end %>
+    <div>
+    

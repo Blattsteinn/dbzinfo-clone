@@ -113,3 +113,13 @@ li {
 #links, #categories {
     padding: 10px;
 }
+
+
+/* FOR CATEGORY  */
+
+#card-container{
+    display: flex;
+}
+.char-display-box{
+    border: 2px solid black;
+}

@@ -9,4 +9,7 @@ Rails.application.routes.draw do
   root "cards#index"
 
   resources :cards, only: [:index, :show]
+  resources :categories, only: [:index, :show]
+  resources :links, only: [:index, :show]
+
 end

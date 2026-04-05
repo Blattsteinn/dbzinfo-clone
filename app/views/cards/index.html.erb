@@ -1,12 +1,18 @@
 <h1> Viewing all cards </h1>
 
 
-<ul>
-    <% @cards.each do |card| %>
-        <% if card.id.to_s.start_with? "1" %>
-        <li>
-           <%= link_to card.name, card %>
-        </li> 
+    <div id="card-container">
+        <% @cards.each do |card| %>
+            <% unless card.id.to_s.start_with? "1" %>
+                <% next %>
+            <% end %>
+
+        <div class="char-display-box">
+            <%= image_tag card.thumb_image_url %>
+            <%= link_to card.name, card %>
+        </div> 
+              
         <% end %>
-    <% end %>
-</ul>
+        
+    </div>
+    

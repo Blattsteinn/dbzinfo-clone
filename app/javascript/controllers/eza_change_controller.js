@@ -6,7 +6,7 @@ export default class extends Controller {
                     "superAttackBase", "superAttackExtreme", "superAttackSuperExtreme" , "transformationCondition"]
   static values = {awakenings: Array, base: Object}
 
-    connect() {
+    connect() {  // original page info
       this.originalTransformationConditions = this.transformationConditionTargets.map(t => t.innerHTML)
     }
 

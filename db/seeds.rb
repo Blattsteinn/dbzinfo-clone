@@ -1,1 +1,0 @@
-CardTransformation.create(start_card_id: 4029101, next_card_id: 4029111, description: "Can be activated when charge count is 25 or more...")
