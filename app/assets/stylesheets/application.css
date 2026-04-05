@@ -89,20 +89,32 @@ hr {
 #active-skill,
 #stand-by, #awakening-container,
 #transformation-container {
-    border: 4px solid black;
+    border: 4px solid #263238;
     margin: 10px
 }
 
 
 #optimal-awakening-routes{
     display: flex;
-    justify-content: space-between;
-
+    gap: 25px;
+    padding: 10px;
+    background-color: #263238;
 }
 
 .optimal-change-button{
     height: 70px;
     width: 30%;
+    background-color: #222c31;
+    color: white;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.optimal-change-button:hover{
+    background-color: white;
+    color: #263238;
 }
 
 /* General text styling */
@@ -135,5 +147,5 @@ hr {
     display: flex;
 }
 .char-display-box{
-    border: 2px solid black;
+    padding: 15px;
 }

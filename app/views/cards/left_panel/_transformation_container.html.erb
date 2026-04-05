@@ -12,13 +12,31 @@
     <% if @card.transformation_chain.any? %>
         <% @card.transformation_chain.each do |card| %>
             <div class="transformation-card">
-                <%= link_to "Click me", card %>
-                <div class="transformation-img-container">
-                    <%= image_tag card.thumb_image_url %>
+
+                <div class="character-thumb"> 
+                    <div class="character-base">
+                        <%= image_tag card.get_base_url %>
+                    </div>
+
+                    <div class="character-thumbnail">
+                        <%= image_tag card.thumb_image_url %> 
+                    </div>
+
+                    <div class="character-rarity">
+                        <%= image_tag card.get_rarity_url %>
+                    </div> 
+                                
+                    <div class="character-type">
+                        <%= image_tag card.get_type_url %>
+                    </div> 
+
                 </div>
-            
-                
-                <div>
+
+                <div class="transformation-character-name">
+                    <%= link_to card.id, card %>
+                </div>
+
+                <div class="transformation-condition-text">
                     <%  unless card.transformation_to&.description.nil? %>
                         <b> Condition: </b>
                         <p data-eza-change-target="transformationCondition"
@@ -27,7 +45,7 @@
 
                     <% end %>
                 </div>
-            <hr>
+                <hr>
             </div>
         <% end %>
     <% end  %>

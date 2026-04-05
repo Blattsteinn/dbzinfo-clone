@@ -38,6 +38,7 @@ class Card < ApplicationRecord
     chain
   end
 
+
   def character_image_url
     "/images/cards/#{id - 1}/card_#{id - 1}_character.png"
   end
@@ -53,4 +54,17 @@ class Card < ApplicationRecord
   def thumb_image_url
     "/images/cards/#{id - 1}/card_#{id - 1}_thumb.png"
   end
+  
+  def get_base_url
+    "/images/assets/base/base_#{element}.png"
+  end
+
+  def get_rarity_url
+    "/images/assets/rarity/#{rarity}.png"
+  end
+
+  def get_type_url
+    "/images/assets/type/cha_type_icon_#{element}.png"
+  end
+
 end

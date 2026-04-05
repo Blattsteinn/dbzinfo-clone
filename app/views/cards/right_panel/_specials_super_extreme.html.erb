@@ -1,27 +1,33 @@
-
 <% @card.specials.each do |special| %>
     <% if special.name.include? "(Extreme)" %>
         <div class="super-attacks">
-            <div>
 
-                <%= special.style %> 
-                <%=special.eball_num_start %> Ki
-                <%= special.special_category_name %>, <%= special.name %>
-                <hr>
-
+            <div class="header-section"> 
+                <p class="header-section-text"> 
+                    <%= special.style %> 
+                    <%=special.eball_num_start %> Ki
+                    <%= special.special_category_name %> | <%= special.name %>
+                </p>
             </div>
 
-            <div>
+            <div class="information-section">
                 <div>
-                    <%= special.description %>
+                    <p class="information-section-text"> 
+                        <%= special.description %>
+                    </p>
+                    
                 </div>
-            <hr>
-            <% unless special.special_bonus_1_lv.to_s == "0" %>
+
+
+                <% unless special.special_bonus_1_lv.to_s == "0" %>
+                <hr>
                 <div>
-                    At level <%= special.special_bonus_1_lv %>:
-                    <%= special.special_bonus_1 %>
+                    <p class="information-section-text">
+                        <b> At level <%= special.special_bonus_1_lv %>: </b>
+                        <%= special.special_bonus_1 %>
+                    </p>
                 </div>
-            <% end %>  
+                <% end %>   
             </div>
             
         </div>

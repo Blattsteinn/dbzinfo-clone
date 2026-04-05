@@ -24,6 +24,14 @@
   </head>
 
   <body>
+    <nav>
+      <ul>
+        <li><%= link_to "Cards", cards_path %></li>
+        <li><%= link_to "Categories", categories_path %></li>
+        <li><%= link_to "Links", links_path %></li>
+      </ul>
+    </nav>
+
     <%= yield %>
   </body>
 </html>
