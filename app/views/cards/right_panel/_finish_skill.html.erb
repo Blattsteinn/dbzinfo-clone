@@ -1,21 +1,28 @@
 
 <% unless @card.finish_skills.length == 0 %>
     <% @card.finish_skills.each do |skill| %>
-        <div id="stand-by">
-            <div>
-                Finish  Skill | <%= skill.name %>
+            <div id="stand-by">
+                <div class="header-section"> 
+                    <p class="header-section-text"> 
+                        Finish  Skill | <%= skill.name %>
+                    </p> 
             </div>
+                
+
+            <div class="information-section">
+                <b> Condition: </b>
+                <p class="information-section-text">
+                    <%= skill.condition_description %>
+                </p>  
+                
                 <hr>
 
-            <div>
-                Condition: <%= skill.condition_description %>
-            </div>
-                <hr>
+                <p class="information-section-text">
+                    <%= skill.effect_description %>
+                </p>  
 
-            <div>
-                <%= skill.effect_description %>
             </div>
-
         </div>
+        
     <% end %>
 <% end %>

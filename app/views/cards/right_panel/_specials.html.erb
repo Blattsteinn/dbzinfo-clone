@@ -3,29 +3,31 @@
     <% unless special.name.include? "(Extreme)" %>
         <div class="super-attacks">
 
-            <div class="separate-section-header">
-                <p>
+            <div class="header-section"> 
+                <p class="header-section-text"> 
                     <%= special.style %> 
                     <%=special.eball_num_start %> Ki
-                    <%= special.special_category_name %>, <%= special.name %>
+                    <%= special.special_category_name %> | <%= special.name %>
                 </p>
             </div>
 
-            <div class="separate-section-text">
+            <div class="information-section">
                 <div>
-                    <p> 
+                    <p class="information-section-text"> 
                         <%= special.description %>
                     </p>
                     
                 </div>
-            
+
+
                 <% unless special.special_bonus_1_lv.to_s == "0" %>
-                    <div>
-                       <p>
-                            At level <%= special.special_bonus_1_lv %>:
-                            <%= special.special_bonus_1 %>
-                        </p>
-                    </div>
+                <hr>
+                <div>
+                    <p class="information-section-text">
+                        <b> At level <%= special.special_bonus_1_lv %>: </b>
+                        <%= special.special_bonus_1 %>
+                    </p>
+                </div>
                 <% end %>   
             </div>
             

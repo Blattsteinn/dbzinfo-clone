@@ -1,0 +1,20 @@
+/* _character_preview.html.erb */
+
+#character-preview{
+    background-color: #263238;
+    display: flex;
+}
+
+#character-preview .char-info{
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#character-preview .char-info h1{
+    color: white;
+    font-weight: 1000;
+    font-size: min(2.0vw, 40px);
+}

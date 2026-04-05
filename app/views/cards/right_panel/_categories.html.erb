@@ -1,0 +1,17 @@
+
+
+<div id="categories">
+    <div class="header-section"> 
+        <p class="header-section-text"> 
+            Categories 
+        </p> 
+    </div>
+
+    <div class="information-section">
+        <p class="information-section-text">
+            <% @card.categories.each do |category| %> 
+                <%= link_to category.name, category %>
+            <% end %>
+        </p>
+    </div>
+</div>

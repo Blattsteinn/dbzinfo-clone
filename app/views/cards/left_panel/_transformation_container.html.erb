@@ -1,18 +1,35 @@
 
+<% if @card.transformation_chain.length == 1 %>
+<% return end %>
+
 <div id="transformation-container">
+    <div class="header-section"> 
+            <p class="header-section-text"> 
+                Transformations
+            </p> 
+    </div>
+    
     <% if @card.transformation_chain.any? %>
         <% @card.transformation_chain.each do |card| %>
-        <div class="card-transformations">
-        
-            <%  unless card.transformation_to&.description.nil? %>
-                Condition: <p data-eza-change-target="transformationCondition"> 
-                                <%=  card.transformation_to&.description %> 
-                            <p>
-            <% end %>
+            <div class="transformation-card">
+                <%= link_to "Click me", card %>
+                <div class="transformation-img-container">
+                    <%= image_tag card.thumb_image_url %>
+                </div>
+            
+                
+                <div>
+                    <%  unless card.transformation_to&.description.nil? %>
+                        <b> Condition: </b>
+                        <p data-eza-change-target="transformationCondition"
+                            class="information-section-text"> 
+                            <%=  card.transformation_to&.description %> <p>
 
-            <%= image_tag card.thumb_image_url %>
-            <%= link_to "View card", card %>
-        </div>
+                    <% end %>
+                </div>
+            <hr>
+            </div>
         <% end %>
     <% end  %>
+
 </div>

@@ -1,19 +1,27 @@
 
 <% unless @card.stand_by_id.nil?%>
     <div id="stand-by">
-        <div>
-            Stand By Skill | <%= @card.stand_by.name %>
+        <div class="header-section"> 
+            <p class="header-section-text"> 
+                Stand By Skill | <%= @card.stand_by.name %>
+            </p> 
         </div>
+
+        <div class="information-section">
+            <b> Condition: </b>
+            <p class="information-section-text">
+                 <%= @card.stand_by.condition_description %>
+            </p>  
+            
             <hr>
 
-        <div>
-            Condition: <%= @card.stand_by.condition_description %>
-        </div>
-            <hr>
-
-        <div>
+            <p class="information-section-text">
                 <%= @card.stand_by.effect_description %>
+            </p>  
+
         </div>
+
+        
 
     </div>
 <% end %>

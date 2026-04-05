@@ -1,5 +1,4 @@
 
-<h1> <%= @card.name %> </h1>
 
 <div class="container" data-controller="eza-change"
     data-eza-change-awakenings-value="<%= @card.extreme_awakenings.to_json %>"
@@ -23,11 +22,13 @@
                 <% end %>
         </div>
         <% end %>
-            
 
+        <%= render 'cards/left_panel/release_date', card: @card %>
+            
 
         <%= render 'cards/left_panel/transformation_container', card: @card %>
 
+        <%= render 'cards/left_panel/awakening_container', card: @card %>
 
     </div>
     
@@ -63,28 +64,10 @@
         </template>
 
         
+        <%= render "cards/right_panel/links", card: @card %>
+
+        <%= render "cards/right_panel/categories", card: @card %>
         
-
-        <div id="links">
-            <div> Links </div>
-                <div> 
-                    <% @card.links.each do |link| %> 
-                        <%= link.name %>
-                    <% end %>
-
-                </div>
-        </div>
-
-        <div id="categories">
-            <div> Categories </div>
-                <div> 
-                    <% @card.categories.each do |category| %> 
-                        <%= category.name %>
-                    <% end %>
-
-                </div>
-        </div>
-
     </div>
 
 </div>

@@ -1,0 +1,23 @@
+
+/* Character art styling */
+
+#character-art{
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+#stack-art-on-top {
+  position: relative;
+  width: 100%;
+  max-width: 700px; /* don't exceed this */
+  aspect-ratio: 369.5 / 493; /* maintains ratio automatically */
+}
+
+#stack-art-on-top img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}

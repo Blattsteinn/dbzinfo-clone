@@ -1,19 +1,32 @@
 
 <% unless @card.active_id.nil?%>
     <div id="active-skill">
-        <div>
-            Active Skill | <%= @card.active.active_skill_name %>
-        </div>
-            <hr>
 
-        <div>
-            Condition: <%= @card.active.active_skill_condition %>
+        <div class="header-section">
+            <p class="header-section-text"> 
+                Active Skill | <%= @card.active.active_skill_name %>
+            </p> 
+            
         </div>
-            <hr>
+        
+        <div class="information-section">
+            <b>Condition: </b>
+            <p  class="information-section-text">
+                <%= @card.active.active_skill_condition %>
+            </p>  
 
-        <div>
-            <%= @card.active.active_skill_effect %>
+            <hr>
+            
+            <p  class="information-section-text">
+                <%= @card.active.active_skill_effect %>
+            </p> 
+
+                
+
+            
+
         </div>
 
     </div>
+
 <% end %>

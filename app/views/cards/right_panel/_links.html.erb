@@ -1,0 +1,18 @@
+
+
+<div id="links">
+    <div class="header-section">
+        <p class="header-section-text"> 
+            Links 
+        </p> 
+    </div>
+
+    <div class="information-section">
+        <p class="information-section-text">
+        <% @card.links.each do |link| %> 
+            <%= link_to link.name, link %>
+        <% end %>
+        </p>
+
+    </div>
+</div>
