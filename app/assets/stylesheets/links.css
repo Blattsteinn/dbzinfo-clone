@@ -10,35 +10,6 @@
 }
 
 
-/* links/index */
-/* Box with some header information and so on, store
-.links-container within self */
-.links-box{
-    background-color: #343a40;
-    border: 1px solid black;
-
-    margin-top: 50px;
-}
-
-#links-all-header{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    padding: 10px;
-    font-size: 28px;
-    font-weight: 700;
-}
-
-/* All links here */
-.links-container {
-    padding: 15px;
-    gap: 8px;
-    
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-}
-
 /*  Link image and text inside it styling */
 .link-skill-card {
     position: relative;

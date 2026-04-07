@@ -2,7 +2,8 @@
 
 <div class="container" data-controller="eza-change"
     data-eza-change-awakenings-value="<%= @card.extreme_awakenings.to_json %>"
-    data-eza-change-base-value="<%= @card.to_json %>" >
+    data-eza-change-base-value="<%= @card.to_json %>"
+    data-eza-change-categories-value="<%= Category.all.map { |c| { name: c.name, path: category_path(c) } }.to_json %>" >
 
 
     <div id="left-container">
@@ -69,5 +70,6 @@
         <%= render "cards/right_panel/categories", card: @card %>
         
     </div>
+
 
 </div>

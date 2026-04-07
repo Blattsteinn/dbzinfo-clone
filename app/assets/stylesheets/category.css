@@ -1,23 +1,6 @@
 
-/* category/index */
-.links-box{
-    background-color: #343a40;
-    border: 1px solid black;
 
-    margin-top: 50px;
-}
-
-#links-all-header{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    padding: 10px;
-    font-size: 28px;
-    font-weight: 700;
-}
-
-
+/* Designed for categories */
 #category-img{
     display: flex;
     justify-content: center;

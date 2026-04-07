@@ -1,6 +1,6 @@
 
 
-<div id="card-index-box">
+<div class="application-main-display-box">
 
     <div id="category-img">
         <%= image_tag @category.get_category_img(@category.id) %> 
@@ -32,11 +32,13 @@
             <% end %>
 
         <div class="char-display-box">
-            <%= render 'cards/card_thumb', card: card %>
+            <%= link_to (render 'cards/card_thumb', card: card), card %>
 
-            <div class="characters-name">
-                <%= link_to card.id, card %>
-            </div>
+            <%= link_to card do %>
+                <div class="characters-name">
+                    <%= card.id %>
+                </div>
+            <% end %>
         </div>
 
         <% end %>

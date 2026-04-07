@@ -15,7 +15,7 @@ class Card < ApplicationRecord
 
   
   # Regarding transformations
-  has_one :transformation_from, class_name: "CardTransformation", foreign_key: :start_card_id, dependent: :delete
+  has_many :transformation_from, class_name: "CardTransformation", foreign_key: :start_card_id, dependent: :delete_all
   has_one :next_card, through: :transformation_from, source: :next_card
 
   has_one :transformation_to, class_name: "CardTransformation", foreign_key: :next_card_id, dependent: :delete
@@ -23,18 +23,24 @@ class Card < ApplicationRecord
 
   def transformation_chain
     chain = []
-    
+
+    # Walk back to root
     current = self
     while (prev = CardTransformation.find_by(next_card_id: current.id))
       current = Card.find(prev.start_card_id || break)
     end
-  
+
+    # Walk forward collecting all branches
     chain << current
-    while (step = CardTransformation.find_by(start_card_id: current.id))
-      current = Card.find(step.next_card_id)
-      chain << current
+    queue = [current]
+    while (node = queue.shift)
+      CardTransformation.where(start_card_id: node.id).each do |step|
+        next_card = Card.find(step.next_card_id)
+        chain << next_card
+        queue << next_card
+      end
     end
-    
+
     chain
   end
 

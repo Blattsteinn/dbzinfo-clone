@@ -1,0 +1,31 @@
+
+/* Styles for both links & categories index */
+
+/* All links here */
+.lc-container {
+    padding: 15px;
+    gap: 8px;
+    
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+
+
+@media (max-width: 860px) {
+    .links-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 620px) {
+    .links-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 400px) {
+    .links-container {
+        grid-template-columns: 1fr;
+    }
+}

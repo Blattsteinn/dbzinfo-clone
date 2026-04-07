@@ -1,31 +1,44 @@
-<h1> Viewing all cards </h1>
 
 
-    <div id="card-index-box">
+<div class="application-main-display-box">
+    <div id="main-display-box-header"> All cards 
+    </div>
 
-        <div id="search-bar">
-            <%= form_with url: cards_path, method: :get, local: true do |f| %>
-                <%= f.text_field :search, placeholder: "Search cards...", id: "search-input" %>
-                <%= f.submit "Search", id: "search-submit" %>
-            <% end %>
-        </div>
-        
-
-        <div id=card-container>
-            <% @cards.each do |card| %>
-                <% unless card.id.to_s.start_with? "1" %>
-                    <% next %>
-                <% end %>
-
-                <div class="char-display-box">
-                    <%= render 'card_thumb', card: card %>
-                    <div class="characters-name">
-                        <%= link_to card.id, card %>
-                    </div>
-                </div>
-            
-            <% end %>
-        </div>
-
+    <div id="search-bar">
+        <%= form_with url: cards_path, method: :get, local: true do |f| %>
+            <%= f.text_field :search, placeholder: "Search cards...", id: "search-input" %>
+            <%= f.submit "Search", id: "search-submit" %>
+        <% end %>
     </div>
     
+
+    <div id="card-container">
+        <% @cards.each do |card| %>
+            <% unless card.id.to_s.start_with? "1" %>
+                <% next %>
+            <% end %>
+
+            <div class="char-display-box">
+                <%= link_to (render 'card_thumb', card: card), card %>
+                <%= link_to card do %>
+                    <div class="characters-name">
+                        <%= card.id %>
+                    </div>
+                <% end %>
+            </div>
+        
+        <% end %>
+    </div>
+
+
+    <p> Todo </p>
+    <br>
+    <ol> 
+        <li> Better search thing <li>
+        <li> Awakening routes </li>
+        <li> Category leaders </li>
+        <li> Could display each link level upgrade </li>
+    </ol>
+
+</div>
+

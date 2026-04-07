@@ -1,0 +1,33 @@
+#optimal-awakening-routes {
+    display: flex;
+    gap: 8px;
+    padding: 10px 12px;
+    background-color: #263238;
+}
+
+.optimal-change-button {
+    flex: 1;
+    height: 44px;
+    background-color: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.15);
+    border-radius: 6px;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.optimal-change-button:hover {
+    background-color: rgba(19, 57, 159, 0.15);
+    border-color: #6482dc;
+    color: #6482dc;;
+}
+
+.optimal-change-button:active {
+    background-color: #64c8dc;
+    border-color: #6482dc;
+    color: #222c31;
+}

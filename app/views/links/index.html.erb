@@ -1,6 +1,6 @@
 
-<div class="links-box">
-    <div id="links-all-header"> Links 
+<div class="application-main-display-box">
+    <div id="main-display-box-header"> Links 
     </div>
 
     <div id="search-bar">
@@ -8,9 +8,9 @@
                 <%= f.text_field :search, placeholder: "Search links...", id: "search-input" %>
                 <%= f.submit "Search", id: "search-submit" %>
             <% end %>
-        </div>
+    </div>
 
-    <div class = "links-container">
+    <div class = "lc-container">
         <% @links.each do |link| %>
             <div>
                 <%= render 'link', link: link %>

@@ -1,6 +1,6 @@
 
 
-<div id="card-index-box">
+<div class="application-main-display-box">
     <div id="link-img">
         <%= render 'link', link: @link %>
     </div>
@@ -12,10 +12,13 @@
             <% end %>
 
         <div class="char-display-box">
-            <%= render 'cards/card_thumb', card: card %>
-            <div class="characters-name">
-                <%= link_to card.id, card %>
-            </div>
+            <%= link_to (render 'cards/card_thumb', card: card), card %>
+            <%= link_to card do %>
+                <div class="characters-name">
+                    <%= card.id %>
+                </div>
+            <% end %>
+            
         </div>
 
         <% end %>

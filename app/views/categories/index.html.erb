@@ -1,7 +1,7 @@
-<h2> All categories </h2>
 
-<div class="links-box">
-    <div id="links-all-header"> Categories 
+
+<div class="application-main-display-box">
+    <div id="main-display-box-header"> Categories 
     </div>
 
     <div id="search-bar">
@@ -11,7 +11,7 @@
         <% end %>
     </div>
 
-    <div class = "links-container">
+    <div class = "lc-container">
         <% @categories.each do |category| %>
             <%= link_to image_tag(category.get_category_img(category.id)), category %>
         <% end %>

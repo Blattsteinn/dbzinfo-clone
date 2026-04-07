@@ -23,6 +23,7 @@ module CardsHelper
       image_tag("/images/assets/passive/#{img_name}.png", class: "passive-icon", alt: img_name)
     end
     .gsub(/\*([^*]+)\*/, '<br><strong>\1</strong>')
+    .sub(/\A<br>/, '')
     .gsub(/\n/, '<br>')
     .html_safe
   end
