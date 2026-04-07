@@ -4,11 +4,19 @@
         <div class="super-attacks">
 
             <div class="header-section"> 
-                <p class="header-section-text"> 
-                    <%= special.style %> 
-                    <%=special.eball_num_start %> Ki
-                    <%= special.special_category_name %> | <%= special.name %>
-                </p>
+                <div class="header-section-text super-attack-header"> 
+
+                    <p> <%= special.get_actual_super_name(special.style) %> 
+                    (<%=special.eball_num_start %> Ki) |</p>
+
+                    <div style="display: flex;">
+                        <div class="super-attack-image"> 
+                            <%= image_tag special.get_special_image(special.special_category_name) %>
+                        </div>
+                        <p> <%= special.name %> </p> 
+                    </div>
+                   
+                </div>
             </div>
 
             <div class="information-section">

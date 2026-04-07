@@ -1,0 +1,92 @@
+
+
+/* links/show */
+#link-img{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 15px;
+}
+
+
+/* links/index */
+/* Box with some header information and so on, store
+.links-container within self */
+.links-box{
+    background-color: #343a40;
+    border: 1px solid black;
+
+    margin-top: 50px;
+}
+
+#links-all-header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 10px;
+    font-size: 28px;
+    font-weight: 700;
+}
+
+/* All links here */
+.links-container {
+    padding: 15px;
+    gap: 8px;
+    
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+/*  Link image and text inside it styling */
+.link-skill-card {
+    position: relative;
+    display: flex;
+    text-decoration: none;
+    overflow: hidden;
+}
+
+.link-skill-card:hover {
+    transform: scale(1.1);
+    z-index: 1;
+}
+
+.link-skill-img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.link-skill-name {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 4px;
+    color: white;
+    font-size: 14px;
+    font-weight: 700;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.9);
+    line-height: 1.2;
+}
+
+@media (max-width: 860px) {
+    .links-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 620px) {
+    .links-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 400px) {
+    .links-container {
+        grid-template-columns: 1fr;
+    }
+}

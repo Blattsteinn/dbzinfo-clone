@@ -7,11 +7,10 @@
         </p> 
     </div>
 
-    <div class="information-section">
-        <p class="information-section-text">
-            <% @card.categories.each do |category| %> 
-                <%= link_to category.name, category %>
-            <% end %>
-        </p>
+    <div class="information-section categories-container">
+        <% @card.categories.each do |category| %> 
+            <%= link_to image_tag(category.get_category_img(category.id)), category %>
+        <% end %>
     </div>
+
 </div>

@@ -8,9 +8,9 @@
     </div>
 
     <div class="information-section">
-        <p data-eza-change-target="passiveSkill"
+        <div data-eza-change-target="passiveSkill"
             class="information-section-text">
-            <%= @card.passive_skill_itemized_desc %>  
-        </p>  
+            <%= parse_passive_skill(@card.passive_skill_itemized_desc) %>  
+        </div>  
     </div>
 </div>

@@ -1,0 +1,8 @@
+.header-section-text.super-attack-header{
+    display: flex;
+    gap:10px;
+}
+
+.super-attack-image img{
+    width: 40px;
+}

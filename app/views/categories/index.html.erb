@@ -1,7 +1,22 @@
 <h2> All categories </h2>
 
-<% @categories.each do |cat| %>
-    <div>
-        <%= link_to cat.name, cat %>
+<div class="links-box">
+    <div id="links-all-header"> Categories 
     </div>
-<% end %>
+
+    <div id="search-bar">
+        <%= form_with url: categories_path, method: :get, local: true do |f| %>
+                <%= f.text_field :search, placeholder: "Search categories...", id: "search-input" %>
+                <%= f.submit "Search", id: "search-submit" %>
+        <% end %>
+    </div>
+
+    <div class = "links-container">
+        <% @categories.each do |category| %>
+            <%= link_to image_tag(category.get_category_img(category.id)), category %>
+        <% end %>
+    </div> 
+
+
+</div>
+

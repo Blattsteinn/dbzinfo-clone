@@ -1,0 +1,13 @@
+.category-link {
+    color: white;
+    background-color: rgba(120, 151, 192, 0.28);
+    border-radius: 3px;
+    padding: 0 3px;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.category-link:hover {
+    background-color:  rgba(120, 151, 192, 0.28);
+    text-decoration: underline;
+}

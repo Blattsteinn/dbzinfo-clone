@@ -1,7 +1,21 @@
-<h2> All links </h2>
 
-<% @links.each do |link| %>
-    <div>
-        <%= link_to link.name, link %>
+<div class="links-box">
+    <div id="links-all-header"> Links 
     </div>
-<% end %>
+
+    <div id="search-bar">
+            <%= form_with url: links_path, method: :get, local: true do |f| %>
+                <%= f.text_field :search, placeholder: "Search links...", id: "search-input" %>
+                <%= f.submit "Search", id: "search-submit" %>
+            <% end %>
+        </div>
+
+    <div class = "links-container">
+        <% @links.each do |link| %>
+            <div>
+                <%= render 'link', link: link %>
+            </div>
+        <% end %>
+    </div> 
+
+<div>

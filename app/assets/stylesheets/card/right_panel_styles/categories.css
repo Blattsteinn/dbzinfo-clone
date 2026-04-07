@@ -1,0 +1,16 @@
+
+.categories-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 6px;
+}
+
+.categories-container a {
+    display: flex;
+}
+
+.categories-container img {
+    width: 100%;
+    height: auto;
+    display: block;
+}

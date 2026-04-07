@@ -1,0 +1,51 @@
+
+/* category/index */
+.links-box{
+    background-color: #343a40;
+    border: 1px solid black;
+
+    margin-top: 50px;
+}
+
+#links-all-header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 10px;
+    font-size: 28px;
+    font-weight: 700;
+}
+
+
+#category-img{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 15px;
+}
+
+
+#leaders-container{
+    background-color: #343a40;
+    border: 1px solid black;
+
+    margin-bottom: 25px;
+
+}
+
+#leaders-header{
+    background-color: #495057;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+
+    font-size: 20px;
+    font-weight: 1000;
+}
+
+#leaders-thumb-container{
+    padding: 15px 60px;
+}

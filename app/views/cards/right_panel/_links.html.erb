@@ -7,12 +7,9 @@
         </p> 
     </div>
 
-    <div class="information-section">
-        <p class="information-section-text">
+    <div class="information-section links-container">
         <% @card.links.each do |link| %> 
-            <%= link_to link.name, link %>
+            <%= render 'links/link', link: link %>
         <% end %>
-        </p>
-
     </div>
 </div>
