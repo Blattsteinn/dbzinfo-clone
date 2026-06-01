@@ -1,5 +1,5 @@
 class Category < ApplicationRecord
-  has_many :card_categories
+  has_many :card_categories, dependent: :delete_all
   has_many :cards, through: :card_categories
 
   def get_category_img(id)

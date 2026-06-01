@@ -13,6 +13,8 @@ class Card < ApplicationRecord
   belongs_to  :active, optional: true
   belongs_to  :stand_by, optional: true
 
+  after_destroy :cleanup_orphan_skill_records
+
   
   # Regarding transformations
   has_many :transformation_from, class_name: "CardTransformation", foreign_key: :start_card_id, dependent: :delete_all
@@ -71,6 +73,18 @@ class Card < ApplicationRecord
 
   def get_type_url
     "/images/assets/type/cha_type_icon_#{element}.png"
+  end
+
+  private
+
+  def cleanup_orphan_skill_records
+    if active_id.present? && !Card.exists?(active_id: active_id)
+      Active.where(id: active_id).delete_all
+    end
+
+    if stand_by_id.present? && !Card.exists?(stand_by_id: stand_by_id)
+      StandBy.where(id: stand_by_id).delete_all
+    end
   end
 
 end

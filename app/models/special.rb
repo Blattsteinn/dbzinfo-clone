@@ -21,6 +21,8 @@ class Special < ApplicationRecord
             return "Ultra Super Attack"
         elsif name == "Extra"
             return "Ex Super Attack"
+        elsif name == "Condition"
+            return "Conditional"
         else
             return "Unknown type"
         end

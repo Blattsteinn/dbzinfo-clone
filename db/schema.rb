@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 2026_04_02_143001) do
+ActiveRecord::Schema[8.1].define(version: 2026_06_01_123651) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -119,6 +119,7 @@ ActiveRecord::Schema[8.1].define(version: 2026_04_02_143001) do
 
   create_table "specials", force: :cascade do |t|
     t.bigint "card_id"
+    t.text "causality_description"
     t.datetime "created_at", null: false
     t.text "description", null: false
     t.integer "eball_num_start", null: false

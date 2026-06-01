@@ -27,6 +27,14 @@
                     
                 </div>
 
+                <% if special.causality_description.present? %>
+                <br>
+                    <div>
+                        <p class="information-section-text">
+                        Condition: <%= special.causality_description %>
+                        </p>
+                    </div>
+                <% end %>
 
                 <% unless special.special_bonus_1_lv.to_s == "0" %>
                 <hr>
